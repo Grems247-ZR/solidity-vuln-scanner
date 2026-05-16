@@ -24,12 +24,25 @@ Most security tools (Slither, Mythril) are general-purpose and produce overwhelm
 
 ## Quick Start
 
+### CLI Scanner
 ```bash
 # Scan a directory of Solidity contracts
 python3 scanner_fast.py /path/to/contracts/
 
 # Output: terminal report + scan_results.json
 ```
+
+### Claude Code MCP Server 🆕
+```bash
+# Add to Claude Code
+claude mcp add solidity-audit -- python3 /path/to/mcp_server.py
+
+# Then in Claude Code:
+# "Audit the contracts in ./src/"
+# "Check Staking.sol for vulnerabilities"
+# "Give me an audit summary"
+```
+The MCP server provides 4 tools: `scan_contract`, `scan_directory`, `check_function`, `audit_summary`.
 
 ## Example Output
 
